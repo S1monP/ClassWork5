@@ -16,7 +16,8 @@ public class Main {
         }
         //test1(a);
         //test2(a);
-        test3(a);
+        //test3(a);
+        //test4(a);
     }
 
         public static void test1(int a[][]) {
@@ -51,12 +52,28 @@ public class Main {
         for (int i = 0; i <a.length ; i++) {
             System.out.println(Arrays.toString(a[i]));
             for (int j = 0; j < a.length; j++) {
-                sums[i]=a[i][j];
-                sumst[i]=a[j][i];
+                sums[i]+=a[i][j];
+                sumst[i]+=a[j][i];
                 }
             }
-        System.out.println((Arrays.toString(sums)) + (Arrays.toString(sumst)));
+        System.out.println("Сумма по строкам " + (Arrays.toString(sums)) +  "\nСумма по столбцам " + (Arrays.toString(sumst)));
+        int maxs= sums[0], max=sumst[0],mas=0,mast=0;
+        for (int i = 0; i < sums.length; i++) {
+            if (maxs < sums[i]){
+                maxs = sums[i];
+                mas=i;
+            }
+            if (max < sumst[i]){
+                max = sumst[i];
+                mast=i;
+            }
         }
+        System.out.println("Максимальная сумма в строке " + (mas+1) + "\nМаксимальная сумма в столбце " + (mast+1));
+        }
+
+//    public static void test4(int a[][]) {
+//
+//    }
     }
 
 
